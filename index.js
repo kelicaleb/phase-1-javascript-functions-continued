@@ -1,17 +1,15 @@
-function saturdayFun(rollerSkate = "This Saturday, I want to roller-skate!"){
-    console.log(rollerSkate)
+function saturdayFun(activity="roller-skate"){
+    return `This Saturday, I want to ${activity}!`
 }
-saturdayFun("This Saturday, I want to bathe my dog!");
-const mondayWork = function(goToTheOffice = "This Monday, I will go to the office."){
-    console.log(goToTheOffice);
+function mondayWork(activity="go to the office"){
+    return `This Monday, I will ${activity}.`
 }
-mondayWork("This Monday, I will work from home.");
-
-function wrapAdjective(visual = '*'){
-    return function(parameter = "special"){
-        let name = "You are ";
-        console.log(visual + name + parameter + visual)
+function wrapAdjective(symbol){
+    const innerFunction = (sentence) =>{
+        return `You are ${symbol}${sentence}${symbol}!`
     }
+    return innerFunction
 }
-let result = wrapAdjective()("a hardworker");
-let result2 = wrapAdjective("||")("a dedicated programmer");
+
+console.log(wrapAdjective())
+
